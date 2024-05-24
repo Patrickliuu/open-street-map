@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}PM3 Webseite{% endblock %}
+
+{% block content %}
+
+    <div tabindex="800" id="map"></div>
+    <link href="/static/lib/leaflet.css">
+    <script src="/static/lib/leaflet.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script>
+    <script src="/static/lib/leaflet.js"></script>
+    <script src="/static/lib/leaflet.js.map"></script>
+    <script src="/static/js/map.js" defer></script>
+    <script src="/static/js/bankMarkers.js" defer></script>
+    <script defer>
+        const operatorName = `{{operator_name}}`;
+        const canton = `{{canton}}`;
+    </script>
+
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}PM3 Webseite{% endblock %}
+{% block header %}<a href="/">Bankautomaten</a>{% endblock %}
+
+{% block content %}
+
+    <div class="canton-content">
+
+        {# Filter Functionality (Text input and list of cantons.) #}
+        <div class="filter-container">
+            <input id="canton-search" type="text" class="no-border-input" placeholder="Kanton suchen"/>
+            <ul id="cantons-preview"></ul>
+        </div>
+
+        {# This element is usually empty, displays an error message if necessary. #}
+        <div id="canton-error-message"></div>
+
+        {# The chart-container is necessary so that the canton-canvas (chart) can be responsive. #}
+        <div class="chart-container" style="position: relative; height: calc(80vh - 64px - 142px);">
+            <canvas id="canton-canvas" style="max-height: 100%;"></canvas>
+        </div>
+    </div>
+
+    <script src="/static/lib/chart.min.js" defer></script>
+    <script src="/static/js/cantonChart.js" defer></script>
+
+{% endblock %}

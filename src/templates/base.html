@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link href="/static/css/styles.css" type="text/css" rel="stylesheet">
+    <link href="/static/lib/mui.min.css" type="text/css" rel="stylesheet">
+    <link href="/static/images/favicon.ico" type="image/x-icon" rel="icon" >
+    <script src="/static/lib/mui.min.js"></script>
+    <script src="/static/lib/seedrandom.js"></script>
+    <script src="/static/js/APIHandler.js"></script>
+    <script src="/static/js/colorGenerator.js"></script>
+    <script src="/static/js/atmChart.js"></script>
+
+</head>
+<body>
+<div id="header" class="mui-appbar">
+    <a href="/">Bankautomaten</a>
+    <a href="/canton">Kantone</a>
+</div>
+
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+<div id="footer">
+    <span>© 2022 ZHAW</span>
+    <span>Made by Olga Voll, Patrick Erismann & Gérôme Meyer.</span>
+</div>
+
+</body>
+</html>

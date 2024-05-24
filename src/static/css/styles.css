@@ -1,0 +1,138 @@
+:root {
+    --margins: 0 5vw 0 5vw;
+    --primary-color: #ffffff;
+    --secondary-color: #264653;
+
+    --content-margin-top: 20px;
+    --content-margin-bottom: 10px;
+
+    --header-height: 64px;
+    --footer-height: 20px;
+    --footer-margin: 10px;
+}
+
+#content {
+    margin: var(--margins);
+    margin-top: var(--content-margin-top);
+    margin-bottom: var(--content-margin-bottom);
+
+    min-height: calc(
+            100vh -
+            var(--header-height) -
+            var(--footer-margin) -
+            var(--footer-height) -
+            var(--content-margin-top) -
+            var(--content-margin-bottom)
+    );
+}
+
+#header {
+    /* Uses the pre-defined MUI styles for an app-bar. https://www.muicss.com/docs/v1/css-js/appbar */
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: var(--margins);
+    background-color: var(--secondary-color)
+}
+
+#header > a {
+    padding: calc((64px - 34.4px) / 2) 20px;
+    font-size: 24px;
+    transition: background-color 250ms;
+}
+
+#header > a:hover {
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+#footer {
+    width: calc(90vw);
+    margin: var(--margins);
+    display: flex;
+    height: var(--footer-height);
+    padding-bottom: var(--footer-margin);
+    justify-content: space-between;
+}
+
+#header a, #header a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+#map {
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.no-border-input {
+    border: 0;
+    border-bottom: 1px solid #222222;
+    outline: 0;
+    width: 50%;
+    font-size: 25pt;
+    text-align: center;
+}
+
+.no-border-input:focus {
+    outline: none !important;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    position: relative;
+}
+
+#canton-error-message {
+    font-size: 20pt;
+    color: #F44336;
+    text-align: center;
+}
+
+#cantons-preview {
+    position: absolute;
+    left: 25%;
+    top: calc(50px + 42px + 25px);
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    max-height: 65vh;
+    overflow-y: scroll;
+
+    /* Ensure that the cantons-preview is above the chart-container. */
+    z-index: 2;
+}
+
+#cantons-preview li {
+    /* List specific */
+    list-style-type: none;
+
+    /* Size */
+    width: 50%;
+    min-width: 260px;
+    margin: 8px auto;
+
+    /* Text */
+    text-align: center;
+    font-size: 16pt;
+
+    /* Border */
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    box-shadow: 0 3px 5px 1px rgba(51, 51, 51, 0.23);
+
+
+    /* Transitions / Animations */
+    transition: background-color 400ms, color 400ms;
+}
+
+#cantons-preview li:hover {
+    cursor: pointer;
+    background-color: #0078A8;
+    color: white;
+    /*border: 1px solid #0078A8;*/
+}

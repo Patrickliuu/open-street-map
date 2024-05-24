@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}PM3 Webseite{% endblock %}
+
+{% block content %}
+
+<!-- Fits the chart onto the viewport-->
+<div class="chart-container" style="position: relative; height: calc(80vh - 64px);">
+    <canvas id="bar-chart"  style="max-height: 100%;" ></canvas>
+</div>
+
+<script src="/static/lib/chart.min.js" defer></script>
+<script src="/static/js/mainChart.js" defer></script>
+
+{% endblock %}

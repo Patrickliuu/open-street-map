@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  database:
+    image: mongo:4.0-xenial
+    ports:
+      - "27017:27017"
+    volumes:
+      - pm3-data:/data/db
+  server:
+    build: ./src
+    depends_on:
+      - database
+    ports:
+      - "14032:14032"
+    environment:
+      - DB_URL=mongodb://database/pm3-osm
+      - DB_PORT=27017
+      - DB_NAME=osm_atm
+    volumes:
+      - ./src:/app/
+
+volumes:
+  pm3-data:
